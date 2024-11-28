@@ -1,0 +1,236 @@
+
+
+Project - 5 -- Country GDP Analysis using Pandas, Matplotlib, Numpy
+
+1) We are importing pandas package
+
+2) Then we are importing the csv file
+	- we are giving variable name then we are reading the file 
+	- df = pd.read_csv(r"path")
+	
+3) Now, we are checking the number of rows and columns in the dataset
+	- for this we use the shape() function
+	- it returns the number of rows and columns, you can also call it as dimensions of the dataset
+	- df.shape
+	
+4) We are checing the length of the dataset
+	- for this we use the len() function
+	- whenever we check the length of a dataset it returns the number of rows
+	- len(df)
+
+	
+5) We are checking the number of columns in the dataset
+	- for this we use len() function
+	- but, if we use only df then we will get the number of rows, for columns we need to use
+	- len(df.columns)
+	
+6) Inorder to know what column names we used
+	- for this we use columns() function
+	- this will tell us the column names of the dataset
+	- df.columns
+	
+7) We are checking the type of the dataset
+	- for this we use the type() function
+	- this returns the type of the dataset
+	- type(df)
+	
+8) We are checking the address of the dataset
+	- for this we use the id() function
+	- this returns the address of the dataset
+	- id(df)
+	
+9) We need to know what datatype,or if any missing values are there in the dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the data type of each column, memory used etc.
+	- df.info()
+	
+10)	We need to know which all columns are using what data types
+	- for this we use the dtypes() function
+	- this will return the columns with the data type 
+	- df.dtypes
+	
+11) We are checking the statistical description of the dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), mean, median, std, min, max etc.
+	- df.describe()
+	
+12) We are printing the top values in the dataset
+	- for this we use the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- df.head()
+	
+13) We are printing the bottom values in the dataset
+	- for this we use the tail() function
+	- this returns the values from the bottom of the dataset, if there is no parameter given, it returns last 5 values by default
+	- df.tail()
+	
+14) We are interchanging the rows to columns and the columns to rows in the describe() function output
+	- for this we use the describe().transpose() function
+	- this returns the interchanging of the rows to columns and the columns to rows
+	- df.describe().transpose()
+	
+15) We are changing the column names in the dataset
+	- for this we use the dataset and the columns() function
+	- we need to assign differnt values for the column names
+	- the newly passed values should be equal to the count of the columns
+	- df.columns = ['a','b','c','d','e']
+	
+16) Then we are performing some Indexing and Slicing operations on the dataset
+
+17) We are printing the values of only a particular column
+	- for this we use the column name that we need to print and we use head() function to print the values
+	- this returns the values of the column that we need
+	- df['CountryName'].head()
+
+18) We are printing the values of two columns
+	- for this we use the column names that we need to print and we use head() function to print the values
+	- this returns the values of the columns that we need
+	- df[['CountryName','CountryCode']].head()
+	
+19) We are performing some mathematical operation on the dataset
+	- for this we use the (*) operation
+	- this returns the multiplication of two columns
+	- df.BirthRate * df.InternetUsers
+
+20) We are assigning a variable for the above operation
+	- for this we create a variable
+	- this variable will store the above output in it
+	- mycalc = df.BirthRate * df.InternetUsers
+
+21) We are adding this variable as a column into the dataset
+	- for this we just use the dataset and add it
+	- this will add the variable as a column into the dataset
+	- becuase when we only create the variable and perform the operation it does not add it to the dataset
+	- df['mycalc'] = df.BirthRate * df.InternetUsers
+	
+22) We are deleting the newly added column
+	- for this we are using the drop() function
+	- this will delete the newly created column
+	- we also need to mention the axis ( whether it is row = 1, or column = 0)
+	- df.drop('mycalc', axis = 1)
+	
+********************************************************
+Note: 
+	o Ecxel cosinsts of data in number and text format
+		- Text = Categorical Data
+		- Number = Numerical Data
+		
+	o Axis means rows and columns
+		- rows = 1
+		- columns = 0
+********************************************************
+
+********************************************************
+                                 CASE STUDIES
+								 
+-> Case Study - 1:
+	o Print the values in the dataset that satisfies the below condition
+	o Condition = InternetUsers < 2
+	
+	- we call the column and use the (<) operator and the condition
+	- but this just gives True or False whether the condition is satisfied or not
+	- inorder to print the records/values for the condition we need to use the below code
+	- filter = df.InternetUsers < 2
+	- we are creating a variable and storing the above condition in it
+	- this still does not print the records/values
+	- df[filter]
+	- this prints the records/values
+
+-> Case Study - 2:
+	o Print the values in the dataset that satisfies the below condition
+	o Condition = BirthRate > 40
+	
+	- we call the column and use the (>) operator and the condition
+	- but this just gives True or False whether the condition is satisfied or not
+	- inorder to print the records/values for the condition we need to use the below code
+	- filter2 = df.BirthRate > 40
+	- we are creating a variable and storing the above condition in it
+	- this still does not print the records/values
+	- df[filter1]
+	- this prints the records/values
+
+-> Case Study - 3:
+	o Print the values in the dataset that satisfies the below condition
+	o Condition = InternetUsers < 2 & BirthRate > 40
+	
+	- we call the columns and use the (&) operator and the condition
+	- but this just gives True or False whether the condition is satisfied or not
+	- inorder to print the records/values for the condition we need to use the below code
+	- we need call the two variables (filter, filter1)
+	- df[filter & filter1]
+	- this prints the records/values
+********************************************************
+
+23) We are printing a particular value inside a column
+	- for this we use the (==) operation
+	- this returns the values of the parameter passed inside the column required
+	- df[df.IncomeGroup == 'Low income']
+
+24)We are printing a particular value inside a column
+	- for this we use the (==) operation
+	- this returns the values of the parameter passed inside the column required
+	- df[df.IncomeGroup == 'High income']
+	
+25) We are separating the categorical data from numerical data
+	- for this we are going to create 2 variables
+	- the first variable will store the column names that have categorical values or you can say object data type
+	- the second variable will store the column names that have numerical values or you can say int, float data types
+	- df_cat = [['CountryName','CountryCode'.....]] | df_num = [['BirthRate', 'InternetUsers',...]]
+	
+26) We are printing the categorical values
+	- for this we are using the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- df_cat.head()
+	
+27) We are printing the categorical values
+	- for this we are using the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- df_num.head()
+	
+28) We are printing the unique categories in a column
+	- for this we use the unique() function
+	- this will return the categories inside a column
+	- df.IncomeGroup.unique()
+
+29) We are printing the number of unique categories in a column
+	- for this we use the nunique() function
+	- this will return the number of categories inside a column
+	- df.IncomeGroup.nunique()
+
+********************************************************
+                        VISUALIZATION OF THE DATASET
+						
+1) We are importing matplotlib.pyplot, seaborn packages
+
+2) We are setting a figure size
+
+3) We are importing warnings to igonre them
+
+4) We are printing the Distplot of a column
+	- for this we are using the distplot() function
+	- this will return the distribution plot of a particular column in the dataset
+	- we create a variable use sns package and call the function and the column we need
+	- vis1 = sns.distplot(df['InternetUsers'])
+	
+5) We are priting the Displot of a column
+	- for this we are using the displot() function
+	- this will return the distribution plot of a particular column in the dataset in histogram format
+	- we create a variable use sns package and call the function and the column we need
+	- vis2 = sns.displot(df['InternetUsers'])
+	
+6) We are printing the Boxplot of two columns 
+	- for this we are using the boxplot() function
+	- this will return the summary of the two columns where 1 column will represent x-axis and the other will represent the y-axis
+	- we create a variable use sns package and call the function and the columns we need
+	- vis3 = sns.boxplot(data = df, x = 'IncomeGroup', y = 'BirthRate')
+	
+7) We are printing the lmplot of two columns
+	- for this we are using the lmplot() function
+	- this will return the scatter plot of the two columns where 1 column will represent x-axis and the other will represent the y-axis
+	- we create a variable use sns package and call the function and the columns we need
+	- vis3 = sns.lmplotplot(data = df, x = 'InternetUsers', y = 'BirthRate')
+	- we can remove the line using fit_reg
+	- vis3 = sns.lmplotplot(data = df, x = 'InternetUsers', y = 'BirthRate', fit_reg = False)
+	- we can get more context/insights of the dataset using the hue function
+	- vis3 = sns.lmplotplot(data = df, x = 'InternetUsers', y = 'BirthRate', fit_reg = False, hue = 'IncomeGroup')
+

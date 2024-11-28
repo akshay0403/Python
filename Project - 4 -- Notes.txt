@@ -1,0 +1,125 @@
+
+
+Project - 4: Store Dataset Analysis using Pandas
+
+1) We are importing pandas package
+
+2) Then we are importing the csv file
+	- we are giving variable name then we are reading the file 
+	- store = pd.read_csv(r"path")
+	
+3) Now, we are checking the number of rows and columns in the dataset
+	- for this we use the shape() function
+	- it returns the number of rows and columns, you can also call it as dimensions
+	- store.shape
+	
+4) We are checing the length of the dataset
+	- for the we use the len() function
+	- whenever we check the length of a dataset it returns the number of rows
+	- len(store)
+	
+5) Inorder to know what column names we used
+	- for this we use columns() function
+	- this will tell us the column names of the dataset
+	- store.columns
+	
+6) We are checking the number of columns in the dataset
+	- for this we use len() function
+	- but, if we use only store then we will get the number of rows, for columns we need to use
+	- len(store.columns)
+	
+7) We are checking the type of the dataset
+	- for this we use the type() function
+	- this returns the type of the dataset
+	- type(store)
+	
+8) We are checking the address of the dataset
+	- for this we use the id() function
+	- this returns the address of the dataset
+	- id(store)
+	
+9) We need to know what datatype, or if any missing values are there in the dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the data type of each column, memory used etc.
+	- store.info()
+	
+10)	We need to know which all columns are using what data types
+	- for this we use the dtypes() function
+	- this will return the columns with the data type 
+	- store.dtypes
+	
+11) We are checking is there are any missing values in the dataset
+	- for this we use the isnull() function
+	- this returns False if there are no missing values in the dataset
+	- store.isnull()
+	              Another way is
+	- for this we use the isna() function
+	- this returns False if there are no missing values in the dataset
+	- store.isna()
+	
+12) We are printing the first values in the dataset
+	- for this we use the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- store.head()
+	
+13) We are printing the last values in the dataset
+	- for this we use the tail() function
+	- this returns the values from the bottom of the dataset, if there is no parameter given, it returns last 5 values by default
+	- store.tail()
+	
+14) Then we are performing some Indexing and Slicing operations on the dataset
+
+15) We are printing the column values
+	- for this we use the column names in square brackets and quotes
+	- this will print the column values
+	- store['Category']
+	- we can also orint multiple column values at once
+	- store[['Category','City']]
+
+********************************************************
+Note: 
+	o Ecxel cosinsts of data in number and text format
+		- Text = Categorical Data
+		- Number = Numerical Data
+********************************************************
+
+16) We are separating the categorical data from numerical data
+	- for this we are going to create 2 variables
+	- the first variable will store the column names that have categorical values or you can say object data type
+	- the second variable will store the column names that have numerical values or you can say int, float data types
+	- store_cat = [['Category','City'.....]] | store_num = [['Profit', 'Discount',...]]
+	
+17) We are printing the categorical values
+	- for this we are using the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- store_cat.head()
+	
+18) We are printing the categorical values
+	- for this we are using the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- store_num.head()
+
+19) We need to know what datatype, any missing values are there in the categorical dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the type of each column, memory used etc.
+	- store_cat.info()
+	
+20) We need to know what datatype, any missing values are there in the numerical dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the type of each column, memory used etc.
+	- store_num.info()
+	
+21) We are checking the statistical description of the categorical dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), freq ( how many times the row heading are repeated ), unique ( how many row heading are there ) etc.
+	- store_cat.describe()
+
+22) We are checking the statistical description of the numerical dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), mean, median, std, min, max etc.
+	- store_num.describe()
+	
+23) We are checking the statistical description of the actual dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), freq ( how many times the row heading are repeated ), unique ( how many row heading are there ) etc.
+	- store.describe()
