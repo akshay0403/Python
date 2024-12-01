@@ -1,0 +1,89 @@
+
+
+Matplotlib Practice
+
+-> Intorduction
+	- Displaying information in the form of plots and graphs is known as Data Visualization
+	
+	- It helps to analyze and visualize data clearly and make concrete decisions
+	
+	- The goal of data visualization is to communicate information in a clear and efficient manner
+	
+-> Import Matplotlib
+	- To start working with Matplotlib, we need to import it
+		o import matplotlib
+		
+	- Most of the time we will be working with pyplot interface of matplotlib, so we need to import that too
+		o import matplotlib.pyplot as plt
+		
+	- Inorder to display the plot correctly we use
+		o %matplotlib inline
+	
+-> Visualization with Pyplot
+	- It plots the graph according to x-axis and y-axis
+	- If the y-axis plots are given but x-axis is not, it automatically generates the x-axis plots
+	
+-> Parts of a Plot
+	- There are different parts for a ploy
+	- Like line, Title, Grid, Markers etc..
+	
+-> Line Plot
+	- Simple line plot
+	- We can use this for any functions like, trignometry etc.
+	
+-> Scatter Plot
+	- The points are represented indicidually with dots or circles
+	
+-> Histogram
+	- They are a graphical display of frequencies
+	- They are represented as bars
+	
+-> Bar Chart
+	- Display rectangular bars either in vertical or horizontal form
+	- The length of the bar is equal to the value
+	
+-> Error Bar
+	- Represents the overall distribution of data
+	
+-> Stacked Bar Chart
+	- We can draw this by using a special function called bottom
+	
+-> Pie Chart
+	- These are circular representations, divided into sectors
+	- The arc length of each sector represents the value
+
+-> Box Plot
+	- We can compare distributions of values by showing median, quartiles, min, max of the set of values
+	
+-> Area Chart
+	- This is similar to Line Plot
+	- The area between the x-axis and the line is filled with colour
+	
+-> Contour Plot
+	- They are usefull to display three-dimensional data in two-dimensional using contour or colours
+
+-> Adding a Grig
+	- We can get more information, if there is a reference system in the plot
+	- Reference system would improve the comprehension of the plot
+
+-> Handling Axes
+	- Matplotlib automatically sets the limits of the plot to contain the plotted datasets
+	- We can set our own limits to the axes
+	
+-> Handling X and Y Ticks
+	- It returns the current ticks location and the lables corresponding to each of them
+	
+-> Adding Labels
+	- They specify the type of data we are plotting
+	
+-> Adding a Title
+	- The title of the plot describes about the plot
+	
+-> Adding a Legend
+	- They are used to describe what each line or curve means in the plot
+
+-> Control Colours
+	- This means we can use our own colour for the line or curve
+	
+-> Control Line Styles
+	- This means we can use our own line style for the line or curve
