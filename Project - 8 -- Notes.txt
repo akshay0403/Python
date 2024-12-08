@@ -1,0 +1,104 @@
+
+
+Project - 8 -- Movie Ratings Analytics Using Advanced Visualization
+
+1) We are importing the pandas library
+
+2) We are reading the dataset
+	- we are giving variable name then we are reading the file 
+	- movies = pd.read_csv(r"path")
+	
+3) We are checing the length of the dataset
+	- for this we use the len() function
+	- whenever we check the length of a dataset it returns the number of rows
+	- len(movies)
+
+4) We are printing the top values in the dataset
+	- for this we use the head() function
+	- this returns the values from the start of the dataset, if there is no parameter given, it returns first 5 values by default
+	- movies.head()
+	
+5) We are printing the bottom values in the dataset
+	- for this we use the tail() function
+	- this returns the values from the bottom of the dataset, if there is no parameter given, it returns last 5 values by default
+	- movies.tail()
+	
+6) We are cleanig the column names of the dataset
+	- as the column name contains some unwanted characters, we will clean them
+	- we will call the column and just re-write the column names
+	- movies.columns = ['column_name']
+	
+7) We need to know what datatype,or if any missing values are there in the dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the data type of each column, memory used etc.
+	- movies.info()
+	
+8) We are checking the statistical description of the dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), mean, median, std, min, max etc.
+	- movies.describe()
+	
+9) We are changing the data types of the column
+	- for this we use the astype() function
+	-  we are converting the data type of columns from object to category
+	- movies['Film'] = movies['Film'].astype('category') | movies['Genre'] = movies['Genre'].astype('category') | movies['Year'] = movies['Year'].astype('category')
+	
+10) We are printing the categories inside the 'Genre' column
+	- for this we are using the cat.categories() function
+	- this will print the unique values inside the 'Genre' column
+	- movies['Genre'].cat.categories
+	
+********************************************************
+                                     VISUALIZATIONS
+									 
+1) jointplot()
+	- shows the scatter plot of 2 columns
+	- x = 'CriticRating': Maps the CriticRating column to the x-axis.
+	- y = 'AudienceRating': Maps the AudienceRating column to the y-axis.
+	- kind = 'reg' specifies that a reg plot should be used in the central area | kind='hex' specifies that a hexbin plot should be used in the central area
+	
+2) distplot()
+	- shows the distribution plot : combines hist() and kde()
+	
+3) we are changing the background style of the plot 
+	- for this we use the set_style() function
+	- this will add grids to the plot
+	- sns.set_style('darkgrid')
+
+4) hist()
+	- this shows the hist plot of two variables
+	- it is a bar like plot
+	
+5) lmplot()
+	- regression line plot
+	- the plot visually shows the relationship between the two variables without attempting to fit a regression line
+	
+6) kdeplot()
+	- creates a 2D density plot to show the probability density of two variables 
+	- this plot helps visualize the distribution of two variables and identify regions where the data points are concentrated
+	
+7) subplots()
+	- creates a figure with a grid of subplots.
+	- 1,2 means 1 row and 2 columns
+	
+8) boxplot()
+	- this gives the numeric distribution of columns
+	- like max values, min value, average
+	
+9) violinplot()
+	- this is same as a boxplot(), it is just that the shape changes
+	- this gives the numeric distribution of columns
+	- like max values, min value, average
+
+10) facetgrid()
+	- creates a grid layout for multiple subplots
+	- the rows will be the dataset column values
+	- the columns will be the dataset column values
+
+11) scatter()
+	- creates a scatter plot of the column values
+********************************************************
+
+11) We plotted all the visualizations together
+	- here we used SUBPLOTS(), KDEPLOT(), VIOLINPLOT()
+	- we added some styling to them
