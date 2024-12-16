@@ -1,0 +1,91 @@
+
+
+Project - 11 -- Employee Income Expenditure
+
+1) Importing the  numpye, pandas, seaborn, matplotlib libraries
+
+2) Then we are importing the csv file
+	- we are giving variable name then we are reading the file 
+	- df = pd.read_csv(r"path")
+	
+3) We need to know what datatype,or if any missing values are there in the dataset
+	- for this we use the info() function
+	- this returns the information about the dataset, like the data type of each column, memory used etc.
+	- df.info()
+	
+4) Now, we are checking the number of rows and columns in the dataset
+	- for this we use the shape() function
+	- it returns the number of rows and columns, you can also call it as dimensions of the dataset
+	- df.shape
+	
+5) We are checking the statistical description of the dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), mean, median, std, min, max etc.
+	- df.describe()
+
+6) We are checking the statistical description of the dataset
+	- for this we are using the describe() function
+	- this returns the count ( how many records/rows ), mean, median, std, min, max etc.
+	- we are interchanging the rows and columns
+	- df.describe().transpose()
+	
+7) We are checking the mean expense of a household
+	- for this we are using the mean() function
+	- this returns the average of the column
+	- df['Mthly_HH_Expense'].mean()
+	
+8) We are checking the median household expense
+	- for this we are using the median() function
+	- this returns the midpoint of the column values
+	- df['Mthly_HH_Expense'].median()
+	
+9) We are calculating the Maximum Monthly Household Expenses
+	- for this we use the max() function
+	- we are first creating a frequency table, where we are grouping the unique values in the "Mthly_HH_Expense" column, 
+	- then we are creating another column called 'count', in this we are storing how many times the values are repeating in the above column
+	- then we are checking the maximum number of times a value has repeated, and we are priniting that value
+	- mth_exp_max = pd.crosstab(index = df['Mthly_HH_Expense'], columns = 'count') | mth_exp_max.reset_index(inplace = True) | mth_exp_max[mth_exp_max['count'] == df.Mthly_HH_Expense.value_counts().max()]
+	
+10) We are calculating the Minimum Monthly Household Expenses
+	- for this we use the min() function
+	- we are first creating a frequency table, where we are grouping the unique values in the "Mthly_HH_Expense" column, 
+	- then we are creating another column called 'count', in this we are storing how many times the values are repeating in the above column
+	- then we are checking the maximum number of times a value has repeated, and we are priniting that value
+	- mth_exp_min = pd.crosstab(index = df['Mthly_HH_Expense'], columns = 'count') | mth_exp_min.reset_index(inplace = True) | mth_exp_min[mth_exp_min['count'] == df.Mthly_HH_Expense.value_counts().min()]
+	
+11) We are plotting a Histogram Plot to Count the Highest Qualified Employee
+	- for this we are using the plot() function
+	- first we are counting the number of unique values in the "Highest_Qualified_Member" column
+	- then according to this count we are plotting the histogram 
+	- df['Highest_Qualified_Member'].value_counts().plot(kind = 'bar')
+	
+12) We are calculating the 50% Quantile
+	- for this we are using the quantile() function
+	- we are calculating the quantile of the 'Mthly_HH_Expense' column
+	- we are going to calculate the 75% quantile and then subtract it with the 25% quantile
+	- IQR = df['Mthly_HH_Expense'].quantile(0.75) - df['Mthly_HH_Expense'].quantile(0.25) | print("The 50% IQR is:",IQR)
+	
+13) We are Calculating the Standard Deviation ( for first 4 columns )
+	- for this we are using the std() function
+	- we are first creating a data frame
+	- we are then indexing the values using iloc[] function, this is used for integer-based indexing
+	- then we are finding the Standard Deviation of the columns
+	- pd.DataFrame(df.iloc[:,0:5].std().to_frame())
+	
+14) We are calculating the Variance ( for first 3 columns )
+	- for this we are using the var() function
+	- we are first creating a data frame
+	- we are then indexing the values using iloc[] function, this is used for integer-based indexing
+	- then we are finding the Variance of the columns
+	- pd.DataFrame(df.iloc[:,0:4].var().to_frame())
+
+15) We are Calculating the Count of Highest Qualified Member ( column )
+	- for this we are using the value_counts() function
+	- this will return the number of times a unique value is repeated
+	- df['Highest_Qualified_Member'].value_counts().to_frame()
+	
+16) We are plotting a Histogram Plot to Count the No_of_Earning_Members ( column )
+	- for this we are using the plot() function
+	- first we are counting the number of unique values in the "No_of_Earning_Members" column
+	- then according to this count we are plotting the histogram 
+	- df['No_of_Earning_Members'].value_counts().plot(kind = 'bar')
